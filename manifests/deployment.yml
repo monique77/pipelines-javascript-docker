@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: moniquepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moniquepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: moniquepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: moniquepipelinesjavascriptdocker 
+          image: mycontainerregistryus.azurecr.io/moniquepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
