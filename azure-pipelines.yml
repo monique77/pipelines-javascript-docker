@@ -39,9 +39,19 @@ stages:
         SonarQube: 'teste'
         scannerMode: 'CLI'
         configMode: 'manual'
-        cliProjectKey: 'aplicação teste'
-        cliProjectName: 'aplicacao_teste'
+        cliProjectKey: 'AppTeste'
+        cliProjectName: 'appteste'
         cliSources: '.'
+
+    - task: SonarQubeScannerCli@3
+      inputs:
+        connectedServiceName: 'teste'
+        projectKey: 'Appteste'
+        projectName: 'appteste'
+        projectVersion: '1.0'
+        sources: '.'
+   
+  
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
